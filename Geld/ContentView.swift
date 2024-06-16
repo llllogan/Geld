@@ -8,26 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     var body: some View {
-        ScrollView {
-            
-            VStack {
-                HStack {
-                    Text("$169")
-                        .padding()
-                        .bold()
-                    Text("/ 183")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                }
+        
+        VStack(alignment: .leading) {
+            Text("Balance remaining this week")
+                .font(.caption)
+                .foregroundColor(.gray)
+            HStack {
+                Text("$169")
+                    .font(.system(size: 80, weight: .regular, design: .default))
+                    .bold()
+                Text("/180")
+                    .font(.title)
+                    .foregroundColor(.gray)
+                Spacer()
             }
-            .background(MyMesh())
             
+            RemainingBalanceGraph()
+            
+            MoneyButtons()
         }
+        .padding()
+        
+        Spacer()
     }
 }
+
+
 
 struct MyMesh: View {
     var body: some View {
@@ -50,4 +57,5 @@ struct MyMesh: View {
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
 }
