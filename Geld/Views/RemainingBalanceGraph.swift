@@ -16,11 +16,12 @@ struct RemainingBalanceGraph: View {
                 LineChartExampleView()
             }
         }
-
     }
 }
 
 struct LineChartExampleView: View {
+    @Environment(\.colorScheme) var colorScheme
+
     let balanceData = BalanceDuringWeek.data
     
     var body: some View {
@@ -47,7 +48,7 @@ struct LineChartExampleView: View {
             
             RuleMark(x: .value("Vertical Line", "Thursday"))
                 .lineStyle(StrokeStyle(lineWidth: 2, dash: [5]))
-                .foregroundStyle(Color.white)
+                .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
         }
         .chartXAxis {
             AxisMarks(values: ["Monday", "Wednesday", "Friday", "Sunday"]) { value in
@@ -67,7 +68,7 @@ struct LineChartExampleView: View {
                 AxisValueLabel()
             }
         }
-        .aspectRatio(4/2, contentMode: .fit)
+        .aspectRatio(4/2, contentMode: .fill)
     }
 }
 

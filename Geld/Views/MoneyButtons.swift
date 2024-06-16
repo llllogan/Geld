@@ -21,12 +21,14 @@ struct MoneyButtons: View {
                 Image(systemName: "banknote")
                 Text("Add a pay slip")
                     .frame(maxWidth: .infinity)
+                    .frame(minHeight: 30)
             }
             
             Button(action: doAThing) {
                 Image(systemName: "cart")
                 Text("Log a purchase")
                     .frame(maxWidth: .infinity)
+                    .frame(minHeight: 30)
             }
         }
         .frame(maxWidth: .infinity)

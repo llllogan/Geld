@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    func doAThing() {
+        print("This is a button")
+    }
+
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -27,10 +33,12 @@ struct ContentView: View {
             RemainingBalanceGraph()
             
             MoneyButtons()
+            
+            
         }
         .padding()
         
-        Spacer()
+        ExpensesList()
     }
 }
 
