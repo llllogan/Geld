@@ -29,12 +29,86 @@ struct ContentView: View {
                 RemainingBalanceGraph()
                 
                 MoneyButtons()
+                
+                VStack(alignment: .leading) {
+                    Text("Today's stats")
+                        .font(.title)
+                        .bold()
+                    
+                    MoneySpentToday(spent: 90)
+                    
+                    AverageSpendToday(spend: 76)
+                    
+                    MoneySpentToday(spent: 90)
+                    
+                    AverageSpendToday(spend: 76)
+
+
+                }
+                .padding(.vertical)
+                .frame(maxWidth: .infinity)
             }
             .padding()
             
         }
     }
 }
+
+struct MoneySpentToday: View {
+    
+    var spent: Int
+    
+    var body: some View {
+        GroupBox {
+            HStack {
+                VStack {
+                    HStack {
+                        Label("Spent today", systemImage: "cart.fill")
+                            .font(.headline)
+                            .foregroundColor(.red)
+                    }
+                }
+                Spacer()
+                Text("$45")
+                    .font(.title)
+            }
+        }
+    }
+}
+
+struct AverageSpendToday: View {
+    
+    var spend: Int
+    
+    var body: some View {
+        GroupBox {
+            HStack {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Label("Average spend on Sundays", systemImage: "plusminus.circle.fill")
+                            .font(.headline)
+                            .foregroundColor(.blue)
+                    }
+                    Spacer()
+                    Text("$3 less than your current spend")
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                Text("$48")
+                    .font(.title)
+            }
+        }
+    }
+}
+
+
+
+
+#Preview {
+    MainTabbedView()
+        .preferredColorScheme(.dark)
+}
+
 
 
 
@@ -55,9 +129,4 @@ struct MyMesh: View {
             ]
         )
     }
-}
-
-#Preview {
-    MainTabbedView()
-        .preferredColorScheme(.dark)
 }

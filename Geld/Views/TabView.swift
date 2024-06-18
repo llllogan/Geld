@@ -9,17 +9,15 @@ import SwiftUI
 struct MainTabbedView: View {
     
     var body: some View {
-            
+        
         TabView {
-            ContentView()
-                .tabItem {
-                    Label("Summary", systemImage: "creditcard.fill")
-                }
-            
-            ContentView()
-                .tabItem {
-                    Label("Accounts", systemImage: "wallet.bifold.fill")
-                }
+            Tab("Summary", systemImage: "creditcard.fill") {
+                ContentView()
+                
+            }
+            Tab("Accounts", systemImage: "wallet.bifold.fill") {
+                ContentView()
+            }
         }
     }
 }
