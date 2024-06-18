@@ -11,29 +11,28 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
-            Text("Balance remaining this week")
-                .font(.caption)
-                .foregroundColor(.gray)
-            HStack {
-                Text("$169")
-                    .font(.system(size: 80, weight: .regular, design: .default))
-                    .bold()
-                Text("/180")
-                    .font(.title)
+        ScrollView {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("$169")
+                        .font(.system(size: 80, weight: .regular, design: .default))
+                        .bold()
+                    Text("/180")
+                        .font(.title)
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
+                Text("Balance remaining this week")
+                    .font(.callout)
                     .foregroundColor(.gray)
-                Spacer()
+                
+                RemainingBalanceGraph()
+                
+                MoneyButtons()
             }
-            
-            RemainingBalanceGraph()
-            
-            MoneyButtons()
-            
+            .padding()
             
         }
-        .padding()
-        
-        ExpensesList()
     }
 }
 
@@ -59,6 +58,6 @@ struct MyMesh: View {
 }
 
 #Preview {
-    ContentView()
+    MainTabbedView()
         .preferredColorScheme(.dark)
 }

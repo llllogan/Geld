@@ -11,7 +11,7 @@ import SwiftUI
 struct GeldApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabbedView()
         }
     }
 }

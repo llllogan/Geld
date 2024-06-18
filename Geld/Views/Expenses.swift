@@ -55,8 +55,8 @@ struct ExpensesList: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Expenses")
-                .font(.largeTitle)
+            Text("Recent purchases")
+                .font(.title)
                 .bold()
                 .padding(.top)
                 .padding(.leading)

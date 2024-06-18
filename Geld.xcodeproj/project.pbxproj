@@ -11,6 +11,7 @@
 		BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */; };
 		BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */; };
 		BE9546EF2C1F097E00346C26 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EE2C1F097A00346C26 /* Expenses.swift */; };
+		BEBCA32E2C219BCE00FE816A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBCA32D2C219BC800FE816A /* TabView.swift */; };
 		BED822EB2C1AE708002BF986 /* GeldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED822EA2C1AE708002BF986 /* GeldApp.swift */; };
 		BED822ED2C1AE708002BF986 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED822EC2C1AE708002BF986 /* ContentView.swift */; };
 		BED822EF2C1AE709002BF986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED822EE2C1AE709002BF986 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingBalanceGraph.swift; sourceTree = "<group>"; };
 		BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyButtons.swift; sourceTree = "<group>"; };
 		BE9546EE2C1F097A00346C26 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		BEBCA32D2C219BC800FE816A /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		BED822E72C1AE708002BF986 /* Geld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED822EA2C1AE708002BF986 /* GeldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeldApp.swift; sourceTree = "<group>"; };
 		BED822EC2C1AE708002BF986 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		BE9546E92C1EEA5700346C26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BEBCA32D2C219BC800FE816A /* TabView.swift */,
 				BE9546EE2C1F097A00346C26 /* Expenses.swift */,
 				BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */,
 				BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */,
@@ -281,6 +284,7 @@
 				BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */,
 				BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */,
 				BED822ED2C1AE708002BF986 /* ContentView.swift in Sources */,
+				BEBCA32E2C219BCE00FE816A /* TabView.swift in Sources */,
 				BED822EB2C1AE708002BF986 /* GeldApp.swift in Sources */,
 				BE9546E82C1C5E5B00346C26 /* DumbyData.swift in Sources */,
 			);
