@@ -65,7 +65,7 @@ struct MoneySpentToday: View {
                     HStack {
                         Label("Spent today", systemImage: "cart.fill")
                             .font(.headline)
-                            .foregroundColor(.red)
+                            .foregroundColor(.green)
                     }
                 }
                 Spacer()

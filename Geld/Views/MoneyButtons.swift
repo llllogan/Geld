@@ -18,20 +18,22 @@ struct MoneyButtons: View {
     var body: some View {
         HStack {
             Button(action: doAThing) {
-                Image(systemName: "banknote")
-                Text("Add a pay slip")
+                Image(systemName: "banknote.fill")
+                Text("Top up")
                     .frame(maxWidth: .infinity)
                     .frame(minHeight: 25)
             }
             
             Button(action: doAThing) {
-                Image(systemName: "cart")
-                Text("Log a purchase")
+                Image(systemName: "cart.fill")
+                Text("Log purchase")
                     .frame(maxWidth: .infinity)
                     .frame(minHeight: 25)
             }
+
         }
         .frame(maxWidth: .infinity)
         .buttonStyle(.bordered)
     }
 }
+ 

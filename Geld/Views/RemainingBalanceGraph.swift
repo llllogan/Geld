@@ -54,11 +54,7 @@ struct LineChartExampleView: View {
             AxisMarks(values: ["Monday", "Wednesday", "Friday", "Sunday"]) { value in
                 AxisGridLine()
                 AxisTick()
-                AxisValueLabel() {
-                    if let day = value.as(String.self) {
-                        Text(day)
-                    }
-                }
+                AxisValueLabel()
             }
         }
         .chartYAxis {
