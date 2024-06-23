@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21E0242C28309400F27FC0 /* Transaction.swift */; };
 		BE9546E82C1C5E5B00346C26 /* DumbyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546E72C1C5E5B00346C26 /* DumbyData.swift */; };
 		BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */; };
 		BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE21E0242C28309400F27FC0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		BE9546E72C1C5E5B00346C26 /* DumbyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumbyData.swift; sourceTree = "<group>"; };
 		BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingBalanceGraph.swift; sourceTree = "<group>"; };
 		BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyButtons.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE21E0232C28300E00F27FC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE21E0242C28309400F27FC0 /* Transaction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BE9546E92C1EEA5700346C26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		BED822E92C1AE708002BF986 /* Geld */ = {
 			isa = PBXGroup;
 			children = (
+				BE21E0232C28300E00F27FC0 /* Models */,
 				BE9546E92C1EEA5700346C26 /* Views */,
 				BED822EA2C1AE708002BF986 /* GeldApp.swift */,
 				BED822EC2C1AE708002BF986 /* ContentView.swift */,
@@ -282,6 +293,7 @@
 			files = (
 				BE9546EF2C1F097E00346C26 /* Expenses.swift in Sources */,
 				BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */,
+				BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */,
 				BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */,
 				BED822ED2C1AE708002BF986 /* ContentView.swift in Sources */,
 				BEBCA32E2C219BCE00FE816A /* TabView.swift in Sources */,

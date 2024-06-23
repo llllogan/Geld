@@ -85,12 +85,13 @@ struct AverageSpendToday: View {
             HStack {
                 VStack(alignment: .leading) {
                     HStack {
-                        Label("Average spend on Sundays", systemImage: "plusminus.circle.fill")
+                        Label("Average spend on Sundays", systemImage: "arrow.down.forward.circle.fill")
                             .font(.headline)
                             .foregroundColor(.blue)
                     }
                     Spacer()
                     Text("$3 less than your current spend")
+                        .font(.footnote)
                         .foregroundColor(.secondary)
                 }
                 Spacer()
@@ -98,6 +99,31 @@ struct AverageSpendToday: View {
                     .font(.title)
             }
         }
+    }
+}
+
+struct WeekProgressPieChart: View {
+    
+    var body: some View {
+        GroupBox {
+            HStack {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Label("Average spend on Sundays", systemImage: "arrow.down.forward.circle.fill")
+                            .font(.headline)
+                            .foregroundColor(.blue)
+                    }
+                    Spacer()
+                    Text("$3 less than your current spend")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                Text("$48")
+                    .font(.title)
+            }
+        }
+
     }
 }
 
