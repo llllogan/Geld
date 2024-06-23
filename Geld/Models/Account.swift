@@ -8,7 +8,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Account {
+class Account: Identifiable {
     
     var id: String
     var name: String

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct GeldApp: App {
@@ -13,5 +14,7 @@ struct GeldApp: App {
         WindowGroup {
             MainTabbedView()
         }
+        .modelContainer(for: Transaction.self)
+        .modelContainer(for: Account.self)
     }
 }
