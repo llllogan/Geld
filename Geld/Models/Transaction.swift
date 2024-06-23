@@ -6,9 +6,26 @@
 //
 
 import Foundation
+import SwiftData
 
-class Transaction {
+@Model
+class Transaction: Identifiable {
     
-    var dateTime: TimeInterval
+    var id: String
+    var name: String
+    var vendor: String
+    var amount: Double
+    var date: Date
     
+    init(name: String, vendor: String, amount: Double, date: Date) {
+        
+        self.name = name
+        self.vendor = vendor
+        self.amount = amount
+        self.date = date
+        
+        self.id = UUID().uuidString
+    }
+    
+        
 }

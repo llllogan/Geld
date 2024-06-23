@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE12096B2C283B7D000A0956 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE12096A2C283B57000A0956 /* Account.swift */; };
 		BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21E0242C28309400F27FC0 /* Transaction.swift */; };
 		BE9546E82C1C5E5B00346C26 /* DumbyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546E72C1C5E5B00346C26 /* DumbyData.swift */; };
 		BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE12096A2C283B57000A0956 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		BE21E0242C28309400F27FC0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		BE9546E72C1C5E5B00346C26 /* DumbyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumbyData.swift; sourceTree = "<group>"; };
 		BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingBalanceGraph.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		BE21E0232C28300E00F27FC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE12096A2C283B57000A0956 /* Account.swift */,
 				BE21E0242C28309400F27FC0 /* Transaction.swift */,
 			);
 			path = Models;
@@ -296,6 +299,7 @@
 				BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */,
 				BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */,
 				BED822ED2C1AE708002BF986 /* ContentView.swift in Sources */,
+				BE12096B2C283B7D000A0956 /* Account.swift in Sources */,
 				BEBCA32E2C219BCE00FE816A /* TabView.swift in Sources */,
 				BED822EB2C1AE708002BF986 /* GeldApp.swift in Sources */,
 				BE9546E82C1C5E5B00346C26 /* DumbyData.swift in Sources */,
