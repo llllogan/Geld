@@ -16,24 +16,51 @@ struct MoneyButtons: View {
 
     
     var body: some View {
-        HStack {
-            Button(action: doAThing) {
-                Image(systemName: "banknote.fill")
-                Text("Top up")
-                    .frame(maxWidth: .infinity)
-                    .frame(minHeight: 25)
-            }
             
-            Button(action: doAThing) {
-                Image(systemName: "cart.fill")
-                Text("Log purchase")
-                    .frame(maxWidth: .infinity)
-                    .frame(minHeight: 25)
-            }
-
+        HStack {
+            Button (
+                action: {
+                    print("First button")
+                },
+                label: {
+                    GroupBox {
+                        HStack {
+                            VStack (alignment: .leading) {
+                                Label("Top up", systemImage: "plus.circle.fill")
+                                    .labelStyle(.iconOnly)
+                                    .imageScale(.large)
+                                Spacer()
+                                Text("Top up")
+                                    .fontWeight(.bold)
+                                    .tint(.primary)
+                            }
+                            Spacer()
+                        }
+                    }
+                }
+            )
+            Button (
+                action: {
+                    print("First button")
+                },
+                label: {
+                    GroupBox {
+                        HStack {
+                            VStack (alignment: .leading) {
+                                Label("Log Purchase", systemImage: "cart.fill")
+                                    .labelStyle(.iconOnly)
+                                    .imageScale(.large)
+                                Spacer()
+                                Text("Log Purchase")
+                                    .fontWeight(.bold)
+                                    .tint(.primary)
+                            }
+                            Spacer()
+                        }
+                    }
+                }
+            )
         }
-        .frame(maxWidth: .infinity)
-        .buttonStyle(.bordered)
     }
 }
  
