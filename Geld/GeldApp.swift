@@ -12,7 +12,7 @@ import SwiftData
 struct GeldApp: App {
     var body: some Scene {
         WindowGroup {
-            MainTabbedView()
+            ContentView()
         }
         .modelContainer(for: Transaction.self)
         .modelContainer(for: Account.self)

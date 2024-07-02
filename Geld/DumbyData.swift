@@ -24,3 +24,6 @@ struct BalanceDuringWeek: Identifiable, Equatable {
         ]
     }
 }
+
+
+
