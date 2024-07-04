@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct CreditCardView: View {
+    
+    let nickname: String
+    let cardType: String
+    let holderName: String
+    let cardCategory: String
+    
+    
     var body: some View {
         VStack {
             GeometryReader { geometry in
@@ -23,23 +30,35 @@ struct CreditCardView: View {
                         .overlay(
                             VStack(alignment: .leading) {
                                 HStack {
-                                    Text("Card nick name")
+                                    Text(nickname)
                                         .font(.title2)
                                         .foregroundColor(.white)
                                         .bold()
                                     Spacer()
-                                    Text("VISA")
+                                    Text(cardType)
                                         .font(.title2)
                                         .foregroundColor(.white)
                                         .bold()
                                 }
                                 Spacer()
-                                Text("LOGAN JANSSEN")
-                                    .font(.subheadline)
-                                    .foregroundColor(.white)
-                                Text("Debit Card")
-                                    .font(.subheadline)
-                                    .foregroundColor(.white)
+                                HStack {
+                                    VStack (alignment: .leading) {
+                                        Text(holderName)
+                                            .font(.subheadline)
+                                            .foregroundColor(.white)
+                                        Text(cardCategory)
+                                            .font(.subheadline)
+                                            .foregroundColor(.white)
+                                    }
+                                    Spacer()
+                                    NavigationLink(destination: CardSettingsView()) {
+                                        Image(systemName: "gearshape.fill")
+                                            .foregroundColor(Color.white.opacity(0.5))
+                                            .padding(10)
+                                            .background(Color.black.opacity(0.1))
+                                            .clipShape(Circle())
+                                    }
+                                }
                             }
                             .padding()
                         )
@@ -48,5 +67,34 @@ struct CreditCardView: View {
             .frame(height: UIScreen.main.bounds.width * 0.5) // Ensure enough height for the card with padding
             
         }
+    }
+}
+
+struct MyMesh: View {
+    var body: some View {
+        MeshGradient(
+            width: 3,
+            height: 3,
+            points: [
+                .init(0, 0), .init(0.5, 0), .init(1, 0),
+                .init(0, 0.5), .init(0.3, 0.5), .init(1, 0.5),
+                .init(0, 1), .init(0.5, 1), .init(1, 1)
+            ],
+            colors: [
+                .red, .purple, .indigo,
+                .orange, .cyan, .blue,
+                .yellow, .green, .mint
+            ]
+        )
+    }
+}
+
+
+
+struct CardSettingsView: View {
+    var body: some View {
+        Text("Card Settings")
+            .font(.largeTitle)
+            .navigationBarTitle("Settings", displayMode: .inline)
     }
 }
