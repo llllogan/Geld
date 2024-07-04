@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CreditCardView: View {
     
+    @Binding var showCardSettingsSheet: Bool
+    
     let nickname: String
     let cardType: String
     let holderName: String
@@ -24,7 +26,19 @@ struct CreditCardView: View {
                 VStack {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(
-                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple, Color.red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            MeshGradient(
+                                width: 2,
+                                height: 2,
+                                points: [
+                                    .init(0, 0), .init(1, 0),
+                                    .init(0, 1), .init(1, 1)
+                                ],
+                                colors: [
+                                    .indigo, .purple, .blue, .green
+                                ],
+                                smoothsColors: true,
+                                colorSpace: .device
+                            )
                         )
                         .frame(width: cardWidth, height: cardHeight)
                         .overlay(
@@ -51,12 +65,15 @@ struct CreditCardView: View {
                                             .foregroundColor(.white)
                                     }
                                     Spacer()
-                                    NavigationLink(destination: CardSettingsView()) {
+                                    Button(action: {
+                                        showCardSettingsSheet.toggle()
+                                    }) {
                                         Image(systemName: "gearshape.fill")
                                             .foregroundColor(Color.white.opacity(0.5))
                                             .padding(10)
                                             .background(Color.black.opacity(0.1))
                                             .clipShape(Circle())
+
                                     }
                                 }
                             }
@@ -67,25 +84,6 @@ struct CreditCardView: View {
             .frame(height: UIScreen.main.bounds.width * 0.5) // Ensure enough height for the card with padding
             
         }
-    }
-}
-
-struct MyMesh: View {
-    var body: some View {
-        MeshGradient(
-            width: 3,
-            height: 3,
-            points: [
-                .init(0, 0), .init(0.5, 0), .init(1, 0),
-                .init(0, 0.5), .init(0.3, 0.5), .init(1, 0.5),
-                .init(0, 1), .init(0.5, 1), .init(1, 1)
-            ],
-            colors: [
-                .red, .purple, .indigo,
-                .orange, .cyan, .blue,
-                .yellow, .green, .mint
-            ]
-        )
     }
 }
 

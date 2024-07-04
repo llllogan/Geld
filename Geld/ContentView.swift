@@ -13,12 +13,13 @@ import Foundation
 struct ContentView: View {
     
     @Environment(\.modelContext) private var context
+    @State var showCardSettingsSheet: Bool = false
      
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 
-                CreditCardView(nickname: "Everyday card", cardType: "VISA", holderName: "LOGAN JANSSEN", cardCategory: "Debit Card")
+                CreditCardView(showCardSettingsSheet: $showCardSettingsSheet, nickname: "Everyday card", cardType: "VISA", holderName: "LOGAN JANSSEN", cardCategory: "Debit Card")
                     .frame(maxWidth: .infinity)
                 
                 
@@ -38,6 +39,9 @@ struct ContentView: View {
                 
             }
             .padding()
+        }
+        .sheet(isPresented: $showCardSettingsSheet) {
+            Text("Tyler has great boobs")
         }
     }
 }
