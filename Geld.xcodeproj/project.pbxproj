@@ -21,6 +21,7 @@
 		BED822FC2C1AE709002BF986 /* GeldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED822FB2C1AE709002BF986 /* GeldTests.swift */; };
 		BED823062C1AE709002BF986 /* GeldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED823052C1AE709002BF986 /* GeldUITests.swift */; };
 		BED823082C1AE709002BF986 /* GeldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED823072C1AE709002BF986 /* GeldUITestsLaunchTests.swift */; };
+		BEFF6DF72C36B59300E4FFC0 /* CardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF6DF62C36B58D00E4FFC0 /* CardSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		BED823012C1AE709002BF986 /* GeldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED823052C1AE709002BF986 /* GeldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeldUITests.swift; sourceTree = "<group>"; };
 		BED823072C1AE709002BF986 /* GeldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeldUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BEFF6DF62C36B58D00E4FFC0 /* CardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		BE9546E92C1EEA5700346C26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BEFF6DF62C36B58D00E4FFC0 /* CardSettings.swift */,
 				BED035382C34BE3D00E7A801 /* Card.swift */,
 				BE9546EE2C1F097A00346C26 /* Expenses.swift */,
 				BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */,
@@ -298,6 +301,7 @@
 				BED035392C34BE4100E7A801 /* Card.swift in Sources */,
 				BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */,
 				BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */,
+				BEFF6DF72C36B59300E4FFC0 /* CardSettings.swift in Sources */,
 				BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */,
 				BED822ED2C1AE708002BF986 /* ContentView.swift in Sources */,
 				BE12096B2C283B7D000A0956 /* Account.swift in Sources */,

@@ -41,7 +41,7 @@ struct ContentView: View {
             .padding()
         }
         .sheet(isPresented: $showCardSettingsSheet) {
-            Text("Tyler has great boobs")
+            CardSettings()
         }
     }
 }
