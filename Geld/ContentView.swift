@@ -19,7 +19,7 @@ struct ContentView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 
-                CreditCardView(showCardSettingsSheet: $showCardSettingsSheet, nickname: "Everyday card", cardType: "VISA", holderName: "LOGAN JANSSEN", cardCategory: "Debit Card")
+                CreditCardView(showCardSettingsSheet: $showCardSettingsSheet, nickname: "Everyday card", cardType: "AMERICAN EXPRESS", holderName: "LOGAN JANSSEN", cardCategory: "Debit Card")
                     .frame(maxWidth: .infinity)
                 
                 

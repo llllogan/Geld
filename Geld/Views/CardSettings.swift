@@ -11,10 +11,18 @@ struct CardSettings: View {
     
     @State private var CategoryOfCard = CardCategory.debit
     @State private var CardNickname = ""
+    @State private var CurrencyOfAccount = Currency.aud
+    @State private var ShowColourOnCard: Bool = true
+    @State private var SelectedColor: Color = .blue
     
     
     enum CardCategory: String, CaseIterable {
         case debit, credit, chequing
+        var id: Self { self }
+    }
+    
+    enum Currency: String, CaseIterable {
+        case usd, cad, eur, gbp, jpy, aud
         var id: Self { self }
     }
 
@@ -30,16 +38,37 @@ struct CardSettings: View {
                             Text("Chequing").tag(CardCategory.chequing)
                         }
                     }
-                    TextField("Card nickname", text: $CardNickname)
+                    TextField("Name on Card", text: $CardNickname)
                 }
-                Section("Spending") {
-                    TextField("Amount", text: $CardNickname)
+                Section("Account") {
+                    List {
+                        Picker("Currency", selection: $CurrencyOfAccount) {
+                            Text("USD").tag(Currency.usd)
+                            Text("CAD").tag(Currency.cad)
+                            Text("EUR").tag(Currency.eur)
+                            Text("GBP").tag(Currency.gbp)
+                            Text("JPY").tag(Currency.jpy)
+                            Text("AUD").tag(Currency.aud)
+                        }
+                    }
+                    TextField("Account Nickname", text: $CardNickname)
                 }
+                Section(footer: Text("Dynamic colour will change the colour of the card based on the categories of the purchases you make")) {
+                    ColorPicker("Card Colour", selection: $SelectedColor)
+                        .disabled(ShowColourOnCard)
+                    Toggle(isOn: $ShowColourOnCard) {
+                        Text("Dynamic color")
+                    }
+                }
+
                 Section {
+                    Button(role: .none, action: {print("Hide Account")}) {
+                        Text("Hide Account")
+                    }
                     Button(role: .destructive, action: {print("Delete account")}) {
                         Text("Delete Account")
                     }
-                    .disabled(true)
+                    .disabled(false)
                 }
             }
             .navigationTitle("Account Settings")

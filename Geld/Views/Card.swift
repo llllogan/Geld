@@ -49,7 +49,7 @@ struct CreditCardView: View {
                                         .foregroundColor(.white)
                                         .bold()
                                     Spacer()
-                                    Text(cardType)
+                                    Text("")
                                         .font(.title2)
                                         .foregroundColor(.white)
                                         .bold()
