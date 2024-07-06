@@ -27,7 +27,6 @@ struct ContentView: View {
                     .padding(.top, -30)
                 
                 ExpensesList()
-                
             }
             .padding(.horizontal)
         }
