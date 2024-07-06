@@ -51,7 +51,6 @@ struct ExpenseView: View {
 
 // Main view
 struct ExpensesList: View {
-    @State private var selectedOption = 0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -59,27 +58,7 @@ struct ExpensesList: View {
                 .font(.title)
                 .bold()
                 .padding(.top)
-                .padding(.leading)
             
-            Picker("Select Transactions", selection: $selectedOption) {
-                Text("Past").tag(0)
-                Text("Future").tag(1)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding([.leading, .trailing])
-            
-            List {
-                if selectedOption == 0 {
-                    ForEach(pastTransactions) { expense in
-                        ExpenseView(expense: expense)
-                    }
-                } else {
-                    ForEach(upcomingTransactions) { expense in
-                        ExpenseView(expense: expense)
-                    }
-                }
-            }
-            .listStyle(PlainListStyle())
         }
     }
 }

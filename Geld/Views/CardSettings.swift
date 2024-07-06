@@ -11,6 +11,7 @@ struct CardSettings: View {
     
     @State private var CategoryOfCard = CardCategory.debit
     @State private var CardNickname = ""
+    @State private var NameOnCard = ""
     @State private var CurrencyOfAccount = Currency.aud
     @State private var ShowColourOnCard: Bool = true
     @State private var SelectedColor: Color = .blue
@@ -38,7 +39,7 @@ struct CardSettings: View {
                             Text("Chequing").tag(CardCategory.chequing)
                         }
                     }
-                    TextField("Name on Card", text: $CardNickname)
+                    TextField("Name on Card", text: $NameOnCard)
                 }
                 Section("Account") {
                     List {

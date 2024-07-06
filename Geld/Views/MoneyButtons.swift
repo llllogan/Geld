@@ -18,48 +18,39 @@ struct MoneyButtons: View {
     var body: some View {
             
         HStack {
-            Button (
-                action: {
-                    print("First button")
-                },
-                label: {
-                    GroupBox {
-                        HStack {
-                            VStack (alignment: .leading) {
-                                Label("Top up", systemImage: "plus.circle.fill")
-                                    .labelStyle(.iconOnly)
-                                    .imageScale(.large)
-                                Spacer()
-                                Text("Top up")
-                                    .fontWeight(.bold)
-                                    .tint(.primary)
-                            }
+            Button (action: { print("First button") }) {
+                GroupBox {
+                    HStack {
+                        VStack (alignment: .leading) {
+                            Label("Top up", systemImage: "plus.circle.fill")
+                                .labelStyle(.iconOnly)
+                                .imageScale(.large)
                             Spacer()
+                            Text("Top up")
+                                .fontWeight(.bold)
+                                .tint(.primary)
                         }
+                        Spacer()
                     }
                 }
-            )
-            Button (
-                action: {
-                    print("First button")
-                },
-                label: {
-                    GroupBox {
-                        HStack {
-                            VStack (alignment: .leading) {
-                                Label("Log Purchase", systemImage: "cart.fill")
-                                    .labelStyle(.iconOnly)
-                                    .imageScale(.large)
-                                Spacer()
-                                Text("Log Purchase")
-                                    .fontWeight(.bold)
-                                    .tint(.primary)
-                            }
+            }
+
+            Button (action: { print("Second button") }) {
+                GroupBox {
+                    HStack {
+                        VStack (alignment: .leading) {
+                            Label("Add Purchase", systemImage: "cart.fill")
+                                .labelStyle(.iconOnly)
+                                .imageScale(.large)
                             Spacer()
+                            Text("Add Purchase")
+                                .fontWeight(.bold)
+                                .tint(.primary)
                         }
+                        Spacer()
                     }
                 }
-            )
+            }
         }
     }
 }

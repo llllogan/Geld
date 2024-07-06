@@ -20,25 +20,16 @@ struct ContentView: View {
             VStack(alignment: .leading) {
                 
                 CreditCardView(showCardSettingsSheet: $showCardSettingsSheet, nickname: "Everyday card", cardType: "AMERICAN EXPRESS", holderName: "LOGAN JANSSEN", cardCategory: "Debit Card")
-                    .frame(maxWidth: .infinity)
-                
-                
-                HStack {
-                    Text("$169")
-                        .font(.system(size: 80, weight: .regular, design: .rounded))
-                        .bold()
-                    Text("/180")
-                        .font(.title).fontDesign(.rounded)
-                        .foregroundColor(.gray)
-                }
-                Text("Balance remaining this week")
-                    .font(.callout)
-                    .foregroundColor(.gray)
+                    
+                BalanceInformation()
                 
                 MoneyButtons()
+                    .padding(.top, -30)
+                
+                ExpensesList()
                 
             }
-            .padding()
+            .padding(.horizontal)
         }
         .sheet(isPresented: $showCardSettingsSheet) {
             CardSettings()
