@@ -33,8 +33,8 @@ struct ExpensesList: View {
                     Divider()
                 }
             }
-            Expense()
-            Expense()
+            Expense(purchaseCategoryColour: .red, title: "Woolworths", amount: 80.90, time: "9:05am", locationName: "South City Square")
+            Expense(purchaseCategoryColour: .blue, title: "BWS", amount: 34.45, time: "8:45pm", locationName: "South City Square")
             HStack {
                 Text("Sun 06")
                     .font(.subheadline)
@@ -43,35 +43,41 @@ struct ExpensesList: View {
                     Divider()
                 }
             }
-            Expense()
-            Expense()
 
         }
     }
 }
 
 struct Expense: View {
+    
+    @State var purchaseCategoryColour: Color
+    @State var title: String
+    @State var amount: Double
+    @State var time: String
+    @State var locationName: String
+    
+    
     var body: some View {
         HStack {
             Rectangle()
-                .foregroundColor(.red)
+                .foregroundColor(purchaseCategoryColour)
                 .cornerRadius(10)
                 .frame(width: 10)
             VStack (alignment: .leading) {
-                Text("Groceries from Woolies")
+                Text(title)
                     .font(.title3)
                     .lineLimit(1)
                 HStack {
-                    Label("9:05am", systemImage: "clock.fill")
+                    Label(time, systemImage: "clock.fill")
                         .font(.subheadline)
                         .foregroundColor(.gray)
-                    Label("Woolies", systemImage: "mappin.circle.fill")
+                    Label(locationName, systemImage: "mappin.circle.fill")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
             }
             Spacer()
-            Text("$100")
+            Text("$\(self.amount.formattedString())")
                 .fontDesign(.rounded)
                 .bold()
                 .font(.title3)

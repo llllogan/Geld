@@ -35,3 +35,13 @@ struct CurrencyField: View {
             }
     }
 }
+
+extension Double {
+    func formattedString() -> String {
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: self)) ?? ""
+    }
+}
