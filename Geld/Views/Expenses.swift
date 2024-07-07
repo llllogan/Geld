@@ -43,7 +43,7 @@ struct ExpensesList: View {
                     Divider()
                 }
             }
-
+            Expense(purchaseCategoryColour: .green, title: "Caltex", amount: 103, time: "8:49pm", locationName: "Cabulture")
         }
     }
 }
@@ -74,6 +74,7 @@ struct Expense: View {
                     Label(locationName, systemImage: "mappin.circle.fill")
                         .font(.subheadline)
                         .foregroundColor(.gray)
+                        .lineLimit(1)
                 }
             }
             Spacer()
