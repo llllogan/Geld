@@ -26,7 +26,8 @@ struct ContentView: View {
                 MoneyButtons()
                     .padding(.top, -30)
                 
-                ExpensesList()
+                
+                RecentTransactions()
             }
             .padding(.horizontal)
         }
