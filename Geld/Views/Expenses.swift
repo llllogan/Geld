@@ -33,9 +33,19 @@ struct ExpensesList: View {
                     Divider()
                 }
             }
-            
             Expense()
             Expense()
+            HStack {
+                Text("Sun 06")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                VStack {
+                    Divider()
+                }
+            }
+            Expense()
+            Expense()
+
         }
     }
 }

@@ -15,6 +15,8 @@ struct CardSettings: View {
     @State private var CurrencyOfAccount = Currency.aud
     @State private var ShowColourOnCard: Bool = true
     @State private var SelectedColor: Color = .blue
+    @State private var CreditLimit: Double = 5000
+    @State private var UserDefinedCreditLimit: Double = 200
     
     
     enum CardCategory: String, CaseIterable {
@@ -31,7 +33,7 @@ struct CardSettings: View {
     var body: some View {
         NavigationView {
             Form {
-                Section("Card") {
+                Section(header: Text("Card"), footer: Text("You will recieve a notification when the balance of the account gets close to both credit limits")) {
                     List {
                         Picker("Card Type", selection: $CategoryOfCard) {
                             Text("Debit").tag(CardCategory.debit)
@@ -39,7 +41,23 @@ struct CardSettings: View {
                             Text("Chequing").tag(CardCategory.chequing)
                         }
                     }
-                    TextField("Name on Card", text: $NameOnCard)
+                    HStack {
+                        Text("Holder's Name")
+                        Spacer()
+                        TextField("Name on Card", text: $NameOnCard)
+                            .multilineTextAlignment(.trailing)
+                    }
+                    HStack {
+                        Text("Credit Limit")
+                        Spacer()
+                        CurrencyField(value: $CreditLimit, displayText: "Credit Limit")
+                    }
+                    HStack {
+                        Text("Soft Limit")
+                        Spacer()
+                        CurrencyField(value: $UserDefinedCreditLimit, displayText: "Custom Limit")
+                    }
+
                 }
                 Section("Account") {
                     List {

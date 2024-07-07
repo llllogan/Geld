@@ -34,7 +34,7 @@ struct CreditCardView: View {
                                     .init(0, 1), .init(1, 1)
                                 ],
                                 colors: [
-                                    .indigo, .purple, .blue, .green
+                                    .indigo, .purple, .blue, .red
                                 ],
                                 smoothsColors: true,
                                 colorSpace: .device
