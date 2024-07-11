@@ -10,8 +10,15 @@ import MapKit
 
 struct AddPurchase: View {
     
+    enum Reoccurence {
+        case daily, weekDaily, weekly, fortnightly, monthly, yearly, none
+        var id: Self { self }
+    }
+    
+    @State private var reocurrence: Reoccurence = .daily
+    
     var body: some View {
-        VStack {
+        VStack (alignment: .leading) {
             GroupBox {
                 Expense(purchaseCategoryColour: .yellow, title: "Purchase", amount: 0, time: "5:57pm", locationName: "Home")
                     .frame(height: 70)
@@ -19,7 +26,7 @@ struct AddPurchase: View {
             .padding()
             
             Form {
-                Section {
+                Section (header: Text("Purchase Information")) {
                     HStack {
                         Text("Name")
                         .font(.headline)
@@ -40,16 +47,25 @@ struct AddPurchase: View {
                         .font(.headline)
                     DatePicker("Time", selection: .constant(Date()), displayedComponents: .hourAndMinute)
                         .font(.headline)
+                    List {
+                        Picker("Reocurrence", selection: $reocurrence) {
+                            Text("Daily").tag(Reoccurence.daily)
+                            Text("Week Days").tag(Reoccurence.weekDaily)
+                            Text("Weekly").tag(Reoccurence.weekly)
+                            Text("Fortnightly").tag(Reoccurence.fortnightly)
+                            Text("Monthly").tag(Reoccurence.monthly)
+                            Text("Annually").tag(Reoccurence.yearly)
+                            Text("None").tag(Reoccurence.none)
+                        }
+                    }
+
                     Label("This time and date is in the future", systemImage: "clock.badge.fill")
+                    Label("This purchase will be deducted from this account every day", systemImage: "clock.fill")
+
                 }
                 Section (header: Text("Location")) {
                     MapPreview()
                     Button("Pick custom location", action: {print("Hello")})
-                }
-                Section (header: Text("Reoccurance")) {
-                    Toggle(isOn: .constant(true)) {
-                        Text("Reoccuring")
-                    }
                 }
             }
             

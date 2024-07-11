@@ -13,7 +13,7 @@ struct RecentTransactions: View {
         Text("Recent Transactions")
             .font(.title)
             .bold()
-            .padding(.top, 10)
+            .padding(.top, 40)
         
         ExpensesList()
 
