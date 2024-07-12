@@ -65,7 +65,7 @@ struct Expense: View {
                 .frame(width: 10)
             VStack (alignment: .leading) {
                 Text(title)
-                    .font(.title3)
+                    .font(.headline)
                     .lineLimit(1)
                 HStack {
                     Label(time, systemImage: "clock.fill")
@@ -81,7 +81,7 @@ struct Expense: View {
             Text("$\(self.amount.formattedString())")
                 .fontDesign(.rounded)
                 .bold()
-                .font(.title3)
+                .font(.headline)
         }
     }
 }
