@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BE12096B2C283B7D000A0956 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE12096A2C283B57000A0956 /* Account.swift */; };
 		BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21E0242C28309400F27FC0 /* Transaction.swift */; };
+		BE40CF012C4105350040697E /* AccountCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40CF002C41052C0040697E /* AccountCategory.swift */; };
+		BE40CF032C41054B0040697E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40CF022C4105460040697E /* Currency.swift */; };
 		BE7730DB2C38CB3C0062AA02 /* BalanceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7730DA2C38CB340062AA02 /* BalanceInformation.swift */; };
 		BE7730DE2C3A74B30062AA02 /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7730DD2C3A74AB0062AA02 /* CurrencyField.swift */; };
 		BE7730E02C3A7F730062AA02 /* AddPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7730DF2C3A7F6F0062AA02 /* AddPurchase.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		BE12096A2C283B57000A0956 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		BE21E0242C28309400F27FC0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		BE40CF002C41052C0040697E /* AccountCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCategory.swift; sourceTree = "<group>"; };
+		BE40CF022C4105460040697E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		BE7730DA2C38CB340062AA02 /* BalanceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInformation.swift; sourceTree = "<group>"; };
 		BE7730DD2C3A74AB0062AA02 /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BE7730DF2C3A7F6F0062AA02 /* AddPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPurchase.swift; sourceTree = "<group>"; };
@@ -102,6 +106,43 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BE40CEFB2C4100BE0040697E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BE40CEFC2C4100C70040697E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BE40CEFD2C4100DF0040697E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BE40CEFE2C4100E90040697E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BE40CEFF2C4100F50040697E /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BE40CF022C4105460040697E /* Currency.swift */,
+				BE40CF002C41052C0040697E /* AccountCategory.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		BE7730DC2C3A74A30062AA02 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +154,8 @@
 		BE9546E92C1EEA5700346C26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BE40CEFC2C4100C70040697E /* Components */,
+				BE40CEFB2C4100BE0040697E /* Screens */,
 				BE7730DF2C3A7F6F0062AA02 /* AddPurchase.swift */,
 				BE7730DA2C38CB340062AA02 /* BalanceInformation.swift */,
 				BEFF6DF62C36B58D00E4FFC0 /* CardSettings.swift */,
@@ -147,6 +190,9 @@
 		BED822E92C1AE708002BF986 /* Geld */ = {
 			isa = PBXGroup;
 			children = (
+				BE40CEFF2C4100F50040697E /* Enums */,
+				BE40CEFE2C4100E90040697E /* Helpers */,
+				BE40CEFD2C4100DF0040697E /* Services */,
 				BE7730DC2C3A74A30062AA02 /* Util */,
 				BE21E0232C28300E00F27FC0 /* Models */,
 				BE9546E92C1EEA5700346C26 /* Views */,
@@ -317,8 +363,10 @@
 				BE9546EF2C1F097E00346C26 /* Expenses.swift in Sources */,
 				BED035392C34BE4100E7A801 /* Card.swift in Sources */,
 				BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */,
+				BE40CF012C4105350040697E /* AccountCategory.swift in Sources */,
 				BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */,
 				BEFF6DF72C36B59300E4FFC0 /* CardSettings.swift in Sources */,
+				BE40CF032C41054B0040697E /* Currency.swift in Sources */,
 				BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */,
 				BED822ED2C1AE708002BF986 /* ContentView.swift in Sources */,
 				BE12096B2C283B7D000A0956 /* Account.swift in Sources */,

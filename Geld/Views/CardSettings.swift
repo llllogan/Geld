@@ -17,17 +17,6 @@ struct AccountSettings: View {
     @State private var colour: Color = .blue
     @State private var creditLimit: Double = 5000
     @State private var userDefinedCreditLimit: Double = 200
-    
-    
-    enum AccountCategory: String, CaseIterable {
-        case debit, credit, chequing
-        var id: Self { self }
-    }
-    
-    enum Currency: String, CaseIterable {
-        case usd, cad, eur, gbp, jpy, aud
-        var id: Self { self }
-    }
 
     
     var body: some View {

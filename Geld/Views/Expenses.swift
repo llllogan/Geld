@@ -46,6 +46,8 @@ struct ExpensesList: View {
                 }
             }
             Expense(purchaseCategoryColour: .green, title: "Caltex", amount: 103, time: "8:49pm", locationName: "Cabulture")
+            Expense(purchaseCategoryColour: .green, title: "Caltex", amount: 103, time: "8:49pm", locationName: "Cabulture")
+
         }
     }
 }

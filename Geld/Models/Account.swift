@@ -14,11 +14,33 @@ class Account: Identifiable {
     var id: String
     var name: String
     var balance: Double
+    var classification: AccountCategory
+    var holdersName: String
+    var creditLimit: Double
+    var cycleLimit: Double
+    var curreny: Currency
+    var color: String
+    var dynamicColor: String
+    var dynamicColorFlag: Bool
+    var hidden: Bool
     
-    init(name: String, balance: Double) {
+    
+    
+    
+    
+    init(name: String, balance: Double, classification: AccountCategory, holdersName: String, creditLimit: Double, cycleLimit: Double, currency: Currency, color: String, dynamicColor: String, dynamicColorFlag: Bool, hidden: Bool) {
         
         self.name = name
         self.balance = balance
+        self.classification = classification
+        self.holdersName = holdersName
+        self.creditLimit = creditLimit
+        self.cycleLimit = cycleLimit
+        self.curreny = currency
+        self.color = color
+        self.dynamicColor = dynamicColor
+        self.dynamicColorFlag = dynamicColorFlag
+        self.hidden = hidden
         
         self.id = UUID().uuidString
     }
