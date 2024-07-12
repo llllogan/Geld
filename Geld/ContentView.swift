@@ -32,10 +32,12 @@ struct ContentView: View {
             .padding(.horizontal)
         }
         .sheet(isPresented: $showCardSettingsSheet) {
-            CardSettings()
+            AccountSettings()
         }
     }
 }
+
+
 
 
 

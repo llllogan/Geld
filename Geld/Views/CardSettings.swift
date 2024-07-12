@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct CardSettings: View {
+struct AccountSettings: View {
     
-    @State private var CategoryOfCard = CardCategory.debit
-    @State private var CardNickname = ""
-    @State private var NameOnCard = ""
-    @State private var CurrencyOfAccount = Currency.aud
-    @State private var ShowColourOnCard: Bool = true
-    @State private var SelectedColor: Color = .blue
-    @State private var CreditLimit: Double = 5000
-    @State private var UserDefinedCreditLimit: Double = 200
+    @State private var accountCategory = AccountCategory.debit
+    @State private var nickname = ""
+    @State private var nameOfHolder = ""
+    @State private var currency = Currency.aud
+    @State private var dynamicColour: Bool = true
+    @State private var colour: Color = .blue
+    @State private var creditLimit: Double = 5000
+    @State private var userDefinedCreditLimit: Double = 200
     
     
-    enum CardCategory: String, CaseIterable {
+    enum AccountCategory: String, CaseIterable {
         case debit, credit, chequing
         var id: Self { self }
     }
@@ -35,33 +35,33 @@ struct CardSettings: View {
             Form {
                 Section(header: Text("Card"), footer: Text("You will recieve a notification when the balance of the account gets close to both credit limits")) {
                     List {
-                        Picker("Card Type", selection: $CategoryOfCard) {
-                            Text("Debit").tag(CardCategory.debit)
-                            Text("Credit").tag(CardCategory.credit)
-                            Text("Chequing").tag(CardCategory.chequing)
+                        Picker("Card Type", selection: $accountCategory) {
+                            Text("Debit").tag(AccountCategory.debit)
+                            Text("Credit").tag(AccountCategory.credit)
+                            Text("Chequing").tag(AccountCategory.chequing)
                         }
                     }
                     HStack {
                         Text("Holder's Name")
                         Spacer()
-                        TextField("Name on Card", text: $NameOnCard)
+                        TextField("Name on Card", text: $nameOfHolder)
                             .multilineTextAlignment(.trailing)
                     }
                     HStack {
                         Text("Credit Limit")
                         Spacer()
-                        CurrencyField(value: $CreditLimit, displayText: "Credit Limit")
+                        CurrencyField(value: $creditLimit, displayText: "Credit Limit")
                     }
                     HStack {
                         Text("Soft Limit")
                         Spacer()
-                        CurrencyField(value: $UserDefinedCreditLimit, displayText: "Custom Limit")
+                        CurrencyField(value: $userDefinedCreditLimit, displayText: "Custom Limit")
                     }
 
                 }
                 Section("Account") {
                     List {
-                        Picker("Currency", selection: $CurrencyOfAccount) {
+                        Picker("Currency", selection: $currency) {
                             Text("USD").tag(Currency.usd)
                             Text("CAD").tag(Currency.cad)
                             Text("EUR").tag(Currency.eur)
@@ -70,12 +70,12 @@ struct CardSettings: View {
                             Text("AUD").tag(Currency.aud)
                         }
                     }
-                    TextField("Account Nickname", text: $CardNickname)
+                    TextField("Account Nickname", text: $nickname)
                 }
                 Section(footer: Text("Dynamic colour will change the colour of the card based on the categories of the purchases you make")) {
-                    ColorPicker("Card Colour", selection: $SelectedColor)
-                        .disabled(ShowColourOnCard)
-                    Toggle(isOn: $ShowColourOnCard) {
+                    ColorPicker("Card Colour", selection: $colour)
+                        .disabled(dynamicColour)
+                    Toggle(isOn: $dynamicColour) {
                         Text("Dynamic color")
                     }
                 }
@@ -98,5 +98,5 @@ struct CardSettings: View {
 
 
 #Preview {
-    CardSettings()
+    AccountSettings()
 }

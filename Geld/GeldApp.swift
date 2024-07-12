@@ -10,11 +10,17 @@ import SwiftData
 
 @main
 struct GeldApp: App {
+    
+    let container: ModelContainer = {
+        let schema = Schema([Transaction.self, Account.self])
+        let container = try! ModelContainer(for: schema, configurations: [])
+        return container
+    }()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Transaction.self)
-        .modelContainer(for: Account.self)
+        .modelContainer(container)
     }
 }

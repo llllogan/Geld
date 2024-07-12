@@ -23,6 +23,8 @@ struct RecentTransactions: View {
 // Main view
 struct ExpensesList: View {
     
+    
+    
     var body: some View {
         GroupBox {
             HStack {
