@@ -10,9 +10,8 @@ import MapKit
 
 struct AddPurchase: View {
     
-    enum Reoccurence {
+    enum Reoccurence: Codable {
         case daily, weekDaily, weekly, fortnightly, monthly, yearly, none
-        var id: Self { self }
     }
     
     @State private var reocurrence: Reoccurence = .daily
@@ -20,7 +19,7 @@ struct AddPurchase: View {
     var body: some View {
         VStack (alignment: .leading) {
             GroupBox {
-                Expense(purchaseCategoryColour: .yellow, title: "Purchase", amount: 0, time: "5:57pm", locationName: "Home")
+                TransactionView(purchaseCategoryColour: .yellow, title: "Purchase", amount: 0, time: "5:57pm", locationName: "Home")
                     .frame(height: 70)
             }
             .padding()

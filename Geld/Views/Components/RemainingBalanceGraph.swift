@@ -67,9 +67,3 @@ struct LineChartExampleView: View {
         .aspectRatio(4/2, contentMode: .fill)
     }
 }
-
-
-#Preview {
-    ContentView()
-        .preferredColorScheme(.dark)
-}

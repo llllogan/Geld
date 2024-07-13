@@ -1,31 +1,25 @@
 //
-//  Expenses.swift
+//  TransactionView.swift
 //  Geld
 //
-//  Created by Logan Janssen on 16/6/2024.
+//  Created by Logan Janssen on 13/7/2024.
 //
 
 import SwiftUI
 
-struct RecentTransactions: View {
-    var body: some View {
-        
-        Text("Recent Transactions")
-            .font(.title)
-            .bold()
-            .padding(.top, 40)
-        
-        ExpensesList()
-
-    }
-}
-
 // Main view
-struct ExpensesList: View {
+struct TransactionList: View {
     
-    
+    @State var transactions: [Transaction] = []
     
     var body: some View {
+        
+        VStack {
+            ForEach(transactions) { transaction in
+                TransactionView(purchaseCategoryColour: .red, title: "Fuel", amount: 45.0, time: "5:45am", locationName: "Brisbane")
+            }
+        }
+                        
         GroupBox {
             HStack {
                 Text("Sun 07")
@@ -35,8 +29,6 @@ struct ExpensesList: View {
                     Divider()
                 }
             }
-            Expense(purchaseCategoryColour: .red, title: "Woolworths", amount: 80.90, time: "9:05am", locationName: "South City Square")
-            Expense(purchaseCategoryColour: .blue, title: "BWS", amount: 34.45, time: "8:45pm", locationName: "South City Square")
             HStack {
                 Text("Sun 06")
                     .font(.subheadline)
@@ -45,14 +37,19 @@ struct ExpensesList: View {
                     Divider()
                 }
             }
-            Expense(purchaseCategoryColour: .green, title: "Caltex", amount: 103, time: "8:49pm", locationName: "Cabulture")
-            Expense(purchaseCategoryColour: .green, title: "Caltex", amount: 103, time: "8:49pm", locationName: "Cabulture")
 
+
+        }
+        .overlay {
+            if transactions.isEmpty {
+                ContentUnavailableView("No transactions", systemImage: "wallet.bifold", description: Text("You have not made any transactions this week."))
+                    .offset(y: 60)
+            }
         }
     }
 }
 
-struct Expense: View {
+struct TransactionView: View {
     
     @State var purchaseCategoryColour: Color
     @State var title: String

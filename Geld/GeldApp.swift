@@ -19,7 +19,7 @@ struct GeldApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SummaryView()
         }
         .modelContainer(container)
     }

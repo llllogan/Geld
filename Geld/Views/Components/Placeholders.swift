@@ -1,45 +1,11 @@
 //
-//  ContentView.swift
+//  Placeholders.swift
 //  Geld
 //
-//  Created by Logan Janssen on 13/6/2024.
+//  Created by Logan Janssen on 13/7/2024.
 //
 
-
-
 import SwiftUI
-import Foundation
-
-struct ContentView: View {
-    
-    @Environment(\.modelContext) private var context
-    @State var showCardSettingsSheet: Bool = false
-     
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                
-                CreditCardView(showCardSettingsSheet: $showCardSettingsSheet, nickname: "Everyday card", cardType: "AMERICAN EXPRESS", holderName: "LOGAN JANSSEN", cardCategory: "Debit Card")
-                    
-                BalanceInformation()
-                
-                MoneyButtons()
-                    .padding(.top, -30)
-                
-                
-                RecentTransactions()
-            }
-            .padding(.horizontal)
-        }
-        .sheet(isPresented: $showCardSettingsSheet) {
-            AccountSettings()
-        }
-    }
-}
-
-
-
-
 
 struct MoneySpentToday: View {
     
@@ -114,10 +80,3 @@ struct WeekProgressPieChart: View {
     }
 }
 
-
-
-
-#Preview {
-    ContentView()
-        .preferredColorScheme(.dark)
-}
