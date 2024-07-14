@@ -10,14 +10,13 @@ import Foundation
 
 struct SummaryView: View {
     
-    @State var showCardSettingsSheet: Bool = false
     @ObservedObject var viewModel = SummaryViewModel()
      
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 
-                CreditCardView(showCardSettingsSheet: $showCardSettingsSheet, nickname: "Everyday card", cardType: "AMERICAN EXPRESS", holderName: "LOGAN JANSSEN", cardCategory: "Debit Card")
+                CreditCardView(showCardSettingsSheet: $viewModel.showCardSettingSheet, nickname: "Everyday card", cardType: "AMERICAN EXPRESS", holderName: "LOGAN JANSSEN", cardCategory: "Debit Card")
                     
                 BalanceInformation()
                 
@@ -29,7 +28,7 @@ struct SummaryView: View {
             }
             .padding(.horizontal)
         }
-        .sheet(isPresented: $showCardSettingsSheet) {
+        .sheet(isPresented: $viewModel.showCardSettingSheet) {
             AccountSettings()
         }
     }

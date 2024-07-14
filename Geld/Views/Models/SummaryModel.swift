@@ -9,6 +9,10 @@ import Foundation
 
 class SummaryViewModel: ObservableObject {
     
+    @Published var showCardSettingSheet: Bool = false
+    @Published var showAddPurchaseSheet: Bool = false
+    @Published var showTopUpSheet: Bool = false
+    
     @Published var remainingBalance: Double = 0
     @Published var cycleLimit: Double = 0
     

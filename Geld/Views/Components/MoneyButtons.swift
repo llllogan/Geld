@@ -10,15 +10,13 @@ import Charts
 
 struct MoneyButtons: View {
     
-    func doAThing() {
-        print("This is a button")
-    }
+    @ObservedObject var viewModel = MoneyButtonsModel()
 
     
     var body: some View {
             
         HStack {
-            Button (action: { print("First button") }) {
+            Button (action: { print("Second button") }) {
                 GroupBox {
                     HStack {
                         VStack (alignment: .leading) {
@@ -35,7 +33,7 @@ struct MoneyButtons: View {
                 }
             }
 
-            Button (action: { print("Second button") }) {
+            Button (action: viewModel.togglePurchaseSheet) {
                 GroupBox {
                     HStack {
                         VStack (alignment: .leading) {
@@ -50,6 +48,9 @@ struct MoneyButtons: View {
                         Spacer()
                     }
                 }
+            }
+            .sheet(isPresented: $viewModel.showAddPurchaseSheet) {
+                AddPurchase()
             }
         }
     }

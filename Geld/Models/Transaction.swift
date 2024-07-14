@@ -16,15 +16,17 @@ class Transaction: Identifiable {
     var vendor: String
     var amount: Double
     var date: Date
+    var time: TimeInterval
     var location: String
     var category: String
     
-    init(name: String, vendor: String, amount: Double, date: Date, location: String, category: String) {
+    init(name: String, vendor: String, amount: Double, date: Date, time: TimeInterval, location: String, category: String) {
         
         self.name = name
         self.vendor = vendor
         self.amount = amount
         self.date = date
+        self.time = time
         self.location = location
         self.category = category
         

@@ -10,44 +10,35 @@ import MapKit
 
 struct AddPurchase: View {
     
-    enum Reoccurence: Codable {
-        case daily, weekDaily, weekly, fortnightly, monthly, yearly, none
-    }
-    
-    @State private var reocurrence: Reoccurence = .daily
+    @ObservedObject var viewModel = AddPurchaseViewModel()
     
     var body: some View {
         VStack (alignment: .leading) {
-            GroupBox {
-                TransactionView(purchaseCategoryColour: .yellow, title: "Purchase", amount: 0, time: "5:57pm", locationName: "Home")
-                    .frame(height: 70)
-            }
-            .padding()
-            
             Form {
                 Section (header: Text("Purchase Information")) {
                     HStack {
                         Text("Name")
                         .font(.headline)
                         Spacer()
-                        TextField("Purchase Name", text: .constant(""))
+                        TextField("Purchase Name", text: $viewModel.name)
                             .multilineTextAlignment(.trailing)
                     }
                     HStack {
                         Text("Amount")
                         .font(.headline)
                         Spacer()
-                        TextField("Amount", text: .constant(""))
+                        TextField("Amount", text: $viewModel.amount)
                             .multilineTextAlignment(.trailing)
+                            .keyboardType(.numberPad)
                     }
                 }
                 Section (header: Text("Time")) {
-                    DatePicker("Date", selection: .constant(Date()), displayedComponents: .date)
+                    DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
                         .font(.headline)
-                    DatePicker("Time", selection: .constant(Date()), displayedComponents: .hourAndMinute)
+                    DatePicker("Time", selection: $viewModel.date, displayedComponents: .hourAndMinute)
                         .font(.headline)
                     List {
-                        Picker("Reocurrence", selection: $reocurrence) {
+                        Picker("Reocurrence", selection: $viewModel.reoccurance) {
                             Text("Daily").tag(Reoccurence.daily)
                             Text("Week Days").tag(Reoccurence.weekDaily)
                             Text("Weekly").tag(Reoccurence.weekly)
@@ -58,8 +49,9 @@ struct AddPurchase: View {
                         }
                     }
 
-                    Label("This time and date is in the future", systemImage: "clock.badge.fill")
-                    Label("This purchase will be deducted from this account every day", systemImage: "clock.fill")
+                    if (viewModel.isDateInFuture()) {
+                        Label("This purchase will happen in the future", systemImage: "clock.badge.fill")
+                    }
 
                 }
                 Section (header: Text("Location")) {
@@ -69,6 +61,10 @@ struct AddPurchase: View {
             }
             
             Spacer()
+            TransactionView(purchaseCategoryColour: .yellow, title: "Purchase", amount: 0, time: "5:57pm", locationName: "Home")
+                .padding(.horizontal)
+                .frame(height: 50)
+
             Button(action: {print("Hello")} ) {
                 ZStack {
                     Rectangle()

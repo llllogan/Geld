@@ -9,22 +9,14 @@ import SwiftUI
 
 struct AccountSettings: View {
     
-    @State private var accountCategory = AccountCategory.debit
-    @State private var nickname = ""
-    @State private var nameOfHolder = ""
-    @State private var currency = Currency.aud
-    @State private var dynamicColour: Bool = true
-    @State private var colour: Color = .blue
-    @State private var creditLimit: Double = 5000
-    @State private var userDefinedCreditLimit: Double = 200
-
+    @ObservedObject var viewModel = AccountSettingsViewModel()
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Card"), footer: Text("You will recieve a notification when the balance of the account gets close to both credit limits")) {
                     List {
-                        Picker("Card Type", selection: $accountCategory) {
+                        Picker("Card Type", selection: $viewModel.accountCategory) {
                             Text("Debit").tag(AccountCategory.debit)
                             Text("Credit").tag(AccountCategory.credit)
                             Text("Chequing").tag(AccountCategory.chequing)
@@ -33,24 +25,24 @@ struct AccountSettings: View {
                     HStack {
                         Text("Holder's Name")
                         Spacer()
-                        TextField("Name on Card", text: $nameOfHolder)
+                        TextField("Name on Card", text: $viewModel.nameOfHolder)
                             .multilineTextAlignment(.trailing)
                     }
                     HStack {
                         Text("Credit Limit")
                         Spacer()
-                        CurrencyField(value: $creditLimit, displayText: "Credit Limit")
+                        CurrencyField(value: $viewModel.creditLimit, displayText: "Credit Limit")
                     }
                     HStack {
                         Text("Soft Limit")
                         Spacer()
-                        CurrencyField(value: $userDefinedCreditLimit, displayText: "Custom Limit")
+                        CurrencyField(value: $viewModel.userDefinedCreditLimit, displayText: "Custom Limit")
                     }
 
                 }
                 Section("Account") {
                     List {
-                        Picker("Currency", selection: $currency) {
+                        Picker("Currency", selection: $viewModel.currency) {
                             Text("USD").tag(Currency.usd)
                             Text("CAD").tag(Currency.cad)
                             Text("EUR").tag(Currency.eur)
@@ -59,12 +51,12 @@ struct AccountSettings: View {
                             Text("AUD").tag(Currency.aud)
                         }
                     }
-                    TextField("Account Nickname", text: $nickname)
+                    TextField("Account Nickname", text: $viewModel.nickname)
                 }
                 Section(footer: Text("Dynamic colour will change the colour of the card based on the categories of the purchases you make")) {
-                    ColorPicker("Card Colour", selection: $colour)
-                        .disabled(dynamicColour)
-                    Toggle(isOn: $dynamicColour) {
+                    ColorPicker("Card Colour", selection: $viewModel.colour)
+                        .disabled(viewModel.dynamicColourFlag)
+                    Toggle(isOn: $viewModel.dynamicColourFlag) {
                         Text("Dynamic color")
                     }
                 }
