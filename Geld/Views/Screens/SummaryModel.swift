@@ -14,19 +14,7 @@ class SummaryViewModel: ObservableObject {
     
     @Published var category: AccountCategory = .debit
     
-    @Published var transactions: [Transaction] = [
-        Transaction(name: "Fuel", vendor: "Caltex", amount: 45.67, date: Date(timeIntervalSinceNow: 0), location: "Gold Coast", category: "Transport"),
-        Transaction(name: "Fuel", vendor: "Caltex", amount: 45.67, date: Date(timeIntervalSinceNow: 0), location: "Gold Coast", category: "Transport"),
-
-        Transaction(name: "Fuel", vendor: "Caltex", amount: 45.67, date: Date(timeIntervalSinceNow: 0), location: "Gold Coast", category: "Transport"),
-
-        Transaction(name: "Fuel", vendor: "Caltex", amount: 45.67, date: Date(timeIntervalSinceNow: 0), location: "Gold Coast", category: "Transport"),
-
-        Transaction(name: "Fuel", vendor: "Caltex", amount: 45.67, date: Date(timeIntervalSinceNow: 0), location: "Gold Coast", category: "Transport"),
-
-        Transaction(name: "Fuel", vendor: "Caltex", amount: 45.67, date: Date(timeIntervalSinceNow: 0), location: "Gold Coast", category: "Transport")
-
-    ]
+    @Published var transactions: [Transaction] = []
     
 }
 

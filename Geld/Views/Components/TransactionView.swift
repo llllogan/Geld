@@ -8,19 +8,19 @@
 import SwiftUI
 
 // Main view
-struct TransactionList: View {
+struct TransactionListView: View {
     
     @State var transactions: [Transaction] = []
     
     var body: some View {
         
-        VStack {
-            ForEach(transactions) { transaction in
-                TransactionView(purchaseCategoryColour: .red, title: "Fuel", amount: 45.0, time: "5:45am", locationName: "Brisbane")
-            }
-        }
-                        
-        GroupBox {
+        if !transactions.isEmpty {
+            
+            Text("Recent Transactions")
+                .font(.title)
+                .bold()
+                .padding(.top, 40)
+
             HStack {
                 Text("Sun 07")
                     .font(.subheadline)
@@ -29,22 +29,14 @@ struct TransactionList: View {
                     Divider()
                 }
             }
-            HStack {
-                Text("Sun 06")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                VStack {
-                    Divider()
+            VStack {
+                ForEach(transactions) { transaction in
+                    TransactionView(purchaseCategoryColour: .red, title: "Fuel", amount: 45.0, time: "5:45am", locationName: "Brisbane")
                 }
             }
-
-
-        }
-        .overlay {
-            if transactions.isEmpty {
-                ContentUnavailableView("No transactions", systemImage: "wallet.bifold", description: Text("You have not made any transactions this week."))
-                    .offset(y: 60)
-            }
+        } else {
+            ContentUnavailableView("No transactions", systemImage: "wallet.bifold", description: Text("You have not made any transactions this week."))
+                .offset(y: 50)
         }
     }
 }

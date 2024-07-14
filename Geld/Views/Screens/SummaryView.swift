@@ -25,7 +25,7 @@ struct SummaryView: View {
                     .padding(.top, -30)
                 
                 
-                RecentTransactions(transactions: viewModel.transactions)
+                TransactionListView(transactions: viewModel.transactions)
             }
             .padding(.horizontal)
         }
