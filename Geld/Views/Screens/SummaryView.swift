@@ -10,7 +10,7 @@ import Foundation
 
 struct SummaryView: View {
     
-    @ObservedObject var viewModel = SummaryViewModel()
+    @State var viewModel = SummaryViewModel()
      
     var body: some View {
         ScrollView {

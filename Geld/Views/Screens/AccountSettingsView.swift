@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AccountSettings: View {
     
-    @ObservedObject var viewModel = AccountSettingsViewModel()
+    @State var viewModel = AccountSettingsViewModel()
     
     var body: some View {
         NavigationView {

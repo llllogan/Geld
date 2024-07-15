@@ -8,17 +8,18 @@
 import Foundation
 import SwiftUICore
 
-class AccountSettingsViewModel: ObservableObject {
+@Observable
+class AccountSettingsViewModel {
     
-    @Published var accountCategory = AccountCategory.debit
-    @Published var nickname = ""
-    @Published var nameOfHolder = ""
-    @Published var currency = Currency.aud
-    @Published var dynamicColourFlag: Bool = true
-    @Published var dynamicColour: String = ""
-    @Published var colour: Color = .blue
-    @Published var creditLimit: Double = 5000
-    @Published var userDefinedCreditLimit: Double = 200
+    var accountCategory = AccountCategory.debit
+    var nickname = ""
+    var nameOfHolder = ""
+    var currency = Currency.aud
+    var dynamicColourFlag: Bool = true
+    var dynamicColour: String = ""
+    var colour: Color = .blue
+    var creditLimit: Double = 5000
+    var userDefinedCreditLimit: Double = 200
     
     
     

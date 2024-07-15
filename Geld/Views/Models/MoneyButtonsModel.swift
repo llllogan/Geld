@@ -7,10 +7,11 @@
 
 import Foundation
 
-class MoneyButtonsModel: ObservableObject {
+@Observable
+class MoneyButtonsModel {
     
-    @Published var showAddPurchaseSheet: Bool = false
-    @Published var showTopUpSheet: Bool = false
+    var showAddPurchaseSheet: Bool = false
+    var showTopUpSheet: Bool = false
     
     func togglePurchaseSheet() {
         showAddPurchaseSheet.toggle()

@@ -7,18 +7,19 @@
 
 import Foundation
 
-class SummaryViewModel: ObservableObject {
+@Observable
+class SummaryViewModel {
     
-    @Published var showCardSettingSheet: Bool = false
-    @Published var showAddPurchaseSheet: Bool = false
-    @Published var showTopUpSheet: Bool = false
+    var showCardSettingSheet: Bool = false
+    var showAddPurchaseSheet: Bool = false
+    var showTopUpSheet: Bool = false
     
-    @Published var remainingBalance: Double = 0
-    @Published var cycleLimit: Double = 0
+    var remainingBalance: Double = 0
+    var cycleLimit: Double = 0
     
-    @Published var category: AccountCategory = .debit
+    var category: AccountCategory = .debit
     
-    @Published var transactions: [Transaction] = []
+    var transactions: [Transaction] = []
     
 }
 

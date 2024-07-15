@@ -10,7 +10,7 @@ import Charts
 
 struct MoneyButtons: View {
     
-    @ObservedObject var viewModel = MoneyButtonsModel()
+    @State var viewModel = MoneyButtonsModel()
 
     
     var body: some View {

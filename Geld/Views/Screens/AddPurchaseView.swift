@@ -9,8 +9,8 @@ import SwiftUI
 import MapKit
 
 struct AddPurchase: View {
-    
-    @ObservedObject var viewModel = AddPurchaseViewModel()
+
+    @State private var viewModel = AddPurchaseViewModel()
     
     var body: some View {
         VStack (alignment: .leading) {
