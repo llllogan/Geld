@@ -11,7 +11,7 @@ import SwiftUICore
 @Observable
 class AccountSettingsViewModel {
     
-    var accountCategory = AccountCategory.debit
+    var accountCategory = CashflowType.debit
     var nickname = ""
     var nameOfHolder = ""
     var currency = Currency.aud

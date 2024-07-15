@@ -17,9 +17,9 @@ struct AccountSettings: View {
                 Section(header: Text("Card"), footer: Text("You will recieve a notification when the balance of the account gets close to both credit limits")) {
                     List {
                         Picker("Card Type", selection: $viewModel.accountCategory) {
-                            Text("Debit").tag(AccountCategory.debit)
-                            Text("Credit").tag(AccountCategory.credit)
-                            Text("Chequing").tag(AccountCategory.chequing)
+                            Text("Debit").tag(CashflowType.debit)
+                            Text("Credit").tag(CashflowType.credit)
+                            Text("Chequing").tag(CashflowType.chequing)
                         }
                     }
                     HStack {

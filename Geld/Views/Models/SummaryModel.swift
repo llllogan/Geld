@@ -17,7 +17,7 @@ class SummaryViewModel {
     var remainingBalance: Double = 0
     var cycleLimit: Double = 0
     
-    var category: AccountCategory = .debit
+    var category: CashflowType = .debit
     
     var transactions: [Transaction] = []
     

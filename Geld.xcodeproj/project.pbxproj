@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		BE12096B2C283B7D000A0956 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE12096A2C283B57000A0956 /* Account.swift */; };
 		BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21E0242C28309400F27FC0 /* Transaction.swift */; };
-		BE40CF012C4105350040697E /* AccountCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40CF002C41052C0040697E /* AccountCategory.swift */; };
+		BE40CF012C4105350040697E /* CashflowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40CF002C41052C0040697E /* CashflowType.swift */; };
 		BE40CF032C41054B0040697E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE40CF022C4105460040697E /* Currency.swift */; };
 		BE7730DB2C38CB3C0062AA02 /* BalanceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7730DA2C38CB340062AA02 /* BalanceInformation.swift */; };
 		BE7730DE2C3A74B30062AA02 /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7730DD2C3A74AB0062AA02 /* CurrencyField.swift */; };
 		BE7730E02C3A7F730062AA02 /* AddPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7730DF2C3A7F6F0062AA02 /* AddPurchaseView.swift */; };
 		BE78F5B52C45367E00CF7F61 /* AddPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5B42C45367B00CF7F61 /* AddPurchaseModel.swift */; };
+		BE78F5B72C4539DC00CF7F61 /* ColourMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5B62C4539D800CF7F61 /* ColourMatrix.swift */; };
+		BE78F5B92C453B5C00CF7F61 /* SpendingCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5B82C453B5600CF7F61 /* SpendingCategories.swift */; };
+		BE78F5BC2C45459E00CF7F61 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5BB2C45459900CF7F61 /* Color.swift */; };
 		BE9546E82C1C5E5B00346C26 /* DumbyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546E72C1C5E5B00346C26 /* DumbyData.swift */; };
 		BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */; };
 		BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */; };
@@ -55,12 +58,15 @@
 /* Begin PBXFileReference section */
 		BE12096A2C283B57000A0956 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		BE21E0242C28309400F27FC0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		BE40CF002C41052C0040697E /* AccountCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCategory.swift; sourceTree = "<group>"; };
+		BE40CF002C41052C0040697E /* CashflowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowType.swift; sourceTree = "<group>"; };
 		BE40CF022C4105460040697E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		BE7730DA2C38CB340062AA02 /* BalanceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInformation.swift; sourceTree = "<group>"; };
 		BE7730DD2C3A74AB0062AA02 /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		BE7730DF2C3A7F6F0062AA02 /* AddPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPurchaseView.swift; sourceTree = "<group>"; };
 		BE78F5B42C45367B00CF7F61 /* AddPurchaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPurchaseModel.swift; sourceTree = "<group>"; };
+		BE78F5B62C4539D800CF7F61 /* ColourMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourMatrix.swift; sourceTree = "<group>"; };
+		BE78F5B82C453B5600CF7F61 /* SpendingCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCategories.swift; sourceTree = "<group>"; };
+		BE78F5BB2C45459900CF7F61 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BE9546E72C1C5E5B00346C26 /* DumbyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumbyData.swift; sourceTree = "<group>"; };
 		BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingBalanceGraph.swift; sourceTree = "<group>"; };
 		BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyButtons.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 		BE21E0232C28300E00F27FC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE78F5B62C4539D800CF7F61 /* ColourMatrix.swift */,
 				BE12096A2C283B57000A0956 /* Account.swift */,
 				BE21E0242C28309400F27FC0 /* Transaction.swift */,
 			);
@@ -158,9 +165,10 @@
 		BE40CEFF2C4100F50040697E /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				BE78F5B82C453B5600CF7F61 /* SpendingCategories.swift */,
 				BEC58C462C43FC490053E5E1 /* Reoccurance.swift */,
 				BE40CF022C4105460040697E /* Currency.swift */,
-				BE40CF002C41052C0040697E /* AccountCategory.swift */,
+				BE40CF002C41052C0040697E /* CashflowType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -171,6 +179,14 @@
 				BE7730DD2C3A74AB0062AA02 /* CurrencyField.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		BE78F5BA2C45459300CF7F61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE78F5BB2C45459900CF7F61 /* Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BE9546E92C1EEA5700346C26 /* Views */ = {
@@ -217,6 +233,7 @@
 		BED822E92C1AE708002BF986 /* Geld */ = {
 			isa = PBXGroup;
 			children = (
+				BE78F5BA2C45459300CF7F61 /* Extensions */,
 				BE40CEFF2C4100F50040697E /* Enums */,
 				BE40CEFE2C4100E90040697E /* Helpers */,
 				BE40CEFD2C4100DF0040697E /* Services */,
@@ -390,12 +407,15 @@
 				BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */,
 				BEC58C412C43E81D0053E5E1 /* AccountSettingsModel.swift in Sources */,
 				BEC58C382C429C7D0053E5E1 /* Placeholders.swift in Sources */,
-				BE40CF012C4105350040697E /* AccountCategory.swift in Sources */,
+				BE40CF012C4105350040697E /* CashflowType.swift in Sources */,
+				BE78F5BC2C45459E00CF7F61 /* Color.swift in Sources */,
 				BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */,
 				BEC58C3E2C42A26D0053E5E1 /* SummaryModel.swift in Sources */,
 				BEFF6DF72C36B59300E4FFC0 /* AccountSettingsView.swift in Sources */,
 				BE40CF032C41054B0040697E /* Currency.swift in Sources */,
 				BEC58C432C43F16F0053E5E1 /* MoneyButtonsModel.swift in Sources */,
+				BE78F5B92C453B5C00CF7F61 /* SpendingCategories.swift in Sources */,
+				BE78F5B72C4539DC00CF7F61 /* ColourMatrix.swift in Sources */,
 				BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */,
 				BEC58C472C43FC4E0053E5E1 /* Reoccurance.swift in Sources */,
 				BE12096B2C283B7D000A0956 /* Account.swift in Sources */,
