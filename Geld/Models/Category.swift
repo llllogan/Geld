@@ -37,7 +37,8 @@ struct PurchaseCategory {
 class Category {
     
     let name: String
-    @Attribute(.transformable(by: ColourTransformer.self)) let colour: UIColor
+    @Attribute(.transformable(by: ColourTransformer.self)) 
+    let colour: UIColor
     let symbol: String
     
     init(name: String, colour: Color, symbol: String) {
