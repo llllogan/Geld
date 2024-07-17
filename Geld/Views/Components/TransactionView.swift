@@ -31,7 +31,7 @@ struct TransactionListView: View {
             }
             VStack {
                 ForEach(transactions) { transaction in
-                    TransactionView(purchaseCategoryColour: .red, title: "Fuel", amount: 45.0, time: "5:45am", locationName: "Brisbane")
+                    TransactionView(transaction: transaction)
                 }
             }
         } else {
@@ -43,35 +43,31 @@ struct TransactionListView: View {
 
 struct TransactionView: View {
     
-    @State var purchaseCategoryColour: Color
-    @State var title: String
-    @State var amount: Double
-    @State var time: String
-    @State var locationName: String
+    @State var transaction: Transaction
     
     
     var body: some View {
         HStack {
             Rectangle()
-                .foregroundColor(purchaseCategoryColour)
+                .foregroundColor(Color(transaction.category.colour))
                 .cornerRadius(10)
                 .frame(width: 10)
             VStack (alignment: .leading) {
-                Text(title)
+                Text(transaction.name)
                     .font(.headline)
                     .lineLimit(1)
                 HStack {
-                    Label(time, systemImage: "clock.fill")
+                    Label(transaction.getTimeString, systemImage: "clock.fill")
                         .font(.subheadline)
                         .foregroundColor(.gray)
-                    Label(locationName, systemImage: "mappin.circle.fill")
+                    Label(transaction.location, systemImage: "mappin.circle.fill")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                         .lineLimit(1)
                 }
             }
             Spacer()
-            Text("$\(self.amount.formattedString())")
+            Text("$\(transaction.amount.formattedString())")
                 .fontDesign(.rounded)
                 .bold()
                 .font(.headline)

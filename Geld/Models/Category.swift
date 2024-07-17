@@ -10,7 +10,7 @@ import SwiftData
 import UIKit
 
 
-class PurchaseCategory {
+struct PurchaseCategory {
 
     static let groceries = Category(name: "Groceries", colour: .green, symbol: "cart")
     static let housing = Category(name: "Housing", colour: .blue, symbol: "house")
@@ -27,9 +27,9 @@ class PurchaseCategory {
     static let recreation = Category(name: "Recreation", colour: Color(.sRGB, red: 0.0, green: 0.5, blue: 0.5, opacity: 1.0), symbol: "sportscourt") // Teal
     static let householdSupplies = Category(name: "Household Supplies", colour: .brown, symbol: "house.fill")
     static let financialServices = Category(name: "Financial Services", colour: Color(.sRGB, red: 1.0, green: 0.84, blue: 0.0, opacity: 1.0), symbol: "dollarsign.circle") // Gold
+    static let defaultCategory = Category(name: "", colour: .gray, symbol: "questionmark.circle")
     
-    init(){
-    }
+
     
 }
 

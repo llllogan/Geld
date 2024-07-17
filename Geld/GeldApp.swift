@@ -10,7 +10,6 @@ import SwiftData
 
 @main
 struct GeldApp: App {
-    
     init() {
         ColourTransformer.register()
     }

@@ -12,6 +12,8 @@ struct AddPurchase: View {
 
     @State private var viewModel = AddPurchaseViewModel()
     
+    let transaction = Transaction(name: "", vendor: "", amount: 0, date: Date(), location: "", category: PurchaseCategory.defaultCategory)
+    
     var body: some View {
         VStack (alignment: .leading) {
             Form {
@@ -56,12 +58,11 @@ struct AddPurchase: View {
                 }
                 Section (header: Text("Location")) {
                     MapPreview()
-                    Button("Pick custom location", action: {print("Hello")})
                 }
             }
             
             Spacer()
-            TransactionView(purchaseCategoryColour: .yellow, title: "Purchase", amount: 0, time: "5:57pm", locationName: "Home")
+            TransactionView(transaction: transaction)
                 .padding(.horizontal)
                 .frame(height: 50)
 
@@ -84,15 +85,21 @@ struct AddPurchase: View {
 }
 
 struct MapPreview: View {
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
+    
+    @State private var cameraPosition: MapCameraPosition = .region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -27.491242943912567, longitude: 153.0883900378484), latitudinalMeters: 1000, longitudinalMeters: 1000))
 
     var body: some View {
-        Map(coordinateRegion: $region)
-            .frame(height: 150) // Adjust the height as needed
-            .cornerRadius(10) // Optional: Add corner radius for rounded edges
+        
+        VStack {
+            Map(position: $cameraPosition)
+                .frame(minHeight: 150)
+                .cornerRadius(10)
+                .padding(.vertical, 10)
+            
+            Button("Pick custom location", action: {print("Hello")})
+        }
+        .padding(.vertical)
+
     }
 }
 

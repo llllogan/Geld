@@ -17,7 +17,7 @@ class Transaction: Identifiable {
     var amount: Double
     var date: Date
     var location: String
-    var category: Category?
+    var category: Category
     
     init(name: String, vendor: String, amount: Double, date: Date, location: String, category: Category) {
         
@@ -29,6 +29,15 @@ class Transaction: Identifiable {
         self.category = category
         
         self.id = UUID().uuidString
+    }
+    
+    var getTimeString: String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss" // or "hh:mm a" for 12-hour format with AM/PM
+
+        let timeString = dateFormatter.string(from: self.date)
+        return timeString
     }
     
         
