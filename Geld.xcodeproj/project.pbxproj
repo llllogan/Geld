@@ -16,9 +16,8 @@
 		BE7730E02C3A7F730062AA02 /* AddPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7730DF2C3A7F6F0062AA02 /* AddPurchaseView.swift */; };
 		BE78F5B52C45367E00CF7F61 /* AddPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5B42C45367B00CF7F61 /* AddPurchaseModel.swift */; };
 		BE78F5B72C4539DC00CF7F61 /* ColourMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5B62C4539D800CF7F61 /* ColourMatrix.swift */; };
-		BE78F5B92C453B5C00CF7F61 /* SpendingCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5B82C453B5600CF7F61 /* SpendingCategories.swift */; };
-		BE78F5BC2C45459E00CF7F61 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5BB2C45459900CF7F61 /* Color.swift */; };
-		BE9546E82C1C5E5B00346C26 /* DumbyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546E72C1C5E5B00346C26 /* DumbyData.swift */; };
+		BE78F5B92C453B5C00CF7F61 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5B82C453B5600CF7F61 /* Category.swift */; };
+		BE78F5BC2C45459E00CF7F61 /* ColorTransformaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78F5BB2C45459900CF7F61 /* ColorTransformaer.swift */; };
 		BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */; };
 		BE9546ED2C1EEE2C00346C26 /* MoneyButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */; };
 		BEC58C382C429C7D0053E5E1 /* Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC58C372C429C780053E5E1 /* Placeholders.swift */; };
@@ -65,9 +64,8 @@
 		BE7730DF2C3A7F6F0062AA02 /* AddPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPurchaseView.swift; sourceTree = "<group>"; };
 		BE78F5B42C45367B00CF7F61 /* AddPurchaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPurchaseModel.swift; sourceTree = "<group>"; };
 		BE78F5B62C4539D800CF7F61 /* ColourMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourMatrix.swift; sourceTree = "<group>"; };
-		BE78F5B82C453B5600CF7F61 /* SpendingCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCategories.swift; sourceTree = "<group>"; };
-		BE78F5BB2C45459900CF7F61 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		BE9546E72C1C5E5B00346C26 /* DumbyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumbyData.swift; sourceTree = "<group>"; };
+		BE78F5B82C453B5600CF7F61 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BE78F5BB2C45459900CF7F61 /* ColorTransformaer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTransformaer.swift; sourceTree = "<group>"; };
 		BE9546EA2C1EEA7100346C26 /* RemainingBalanceGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingBalanceGraph.swift; sourceTree = "<group>"; };
 		BE9546EC2C1EED0600346C26 /* MoneyButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyButtons.swift; sourceTree = "<group>"; };
 		BEC58C372C429C780053E5E1 /* Placeholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholders.swift; sourceTree = "<group>"; };
@@ -121,6 +119,7 @@
 				BE78F5B62C4539D800CF7F61 /* ColourMatrix.swift */,
 				BE12096A2C283B57000A0956 /* Account.swift */,
 				BE21E0242C28309400F27FC0 /* Transaction.swift */,
+				BE78F5B82C453B5600CF7F61 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,7 +164,6 @@
 		BE40CEFF2C4100F50040697E /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				BE78F5B82C453B5600CF7F61 /* SpendingCategories.swift */,
 				BEC58C462C43FC490053E5E1 /* Reoccurance.swift */,
 				BE40CF022C4105460040697E /* Currency.swift */,
 				BE40CF002C41052C0040697E /* CashflowType.swift */,
@@ -184,7 +182,7 @@
 		BE78F5BA2C45459300CF7F61 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BE78F5BB2C45459900CF7F61 /* Color.swift */,
+				BE78F5BB2C45459900CF7F61 /* ColorTransformaer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -243,7 +241,6 @@
 				BED822EA2C1AE708002BF986 /* GeldApp.swift */,
 				BED822EE2C1AE709002BF986 /* Assets.xcassets */,
 				BED822F02C1AE709002BF986 /* Preview Content */,
-				BE9546E72C1C5E5B00346C26 /* DumbyData.swift */,
 			);
 			path = Geld;
 			sourceTree = "<group>";
@@ -408,13 +405,13 @@
 				BEC58C412C43E81D0053E5E1 /* AccountSettingsModel.swift in Sources */,
 				BEC58C382C429C7D0053E5E1 /* Placeholders.swift in Sources */,
 				BE40CF012C4105350040697E /* CashflowType.swift in Sources */,
-				BE78F5BC2C45459E00CF7F61 /* Color.swift in Sources */,
+				BE78F5BC2C45459E00CF7F61 /* ColorTransformaer.swift in Sources */,
 				BE21E0252C2830A700F27FC0 /* Transaction.swift in Sources */,
 				BEC58C3E2C42A26D0053E5E1 /* SummaryModel.swift in Sources */,
 				BEFF6DF72C36B59300E4FFC0 /* AccountSettingsView.swift in Sources */,
 				BE40CF032C41054B0040697E /* Currency.swift in Sources */,
 				BEC58C432C43F16F0053E5E1 /* MoneyButtonsModel.swift in Sources */,
-				BE78F5B92C453B5C00CF7F61 /* SpendingCategories.swift in Sources */,
+				BE78F5B92C453B5C00CF7F61 /* Category.swift in Sources */,
 				BE78F5B72C4539DC00CF7F61 /* ColourMatrix.swift in Sources */,
 				BE9546EB2C1EEAAD00346C26 /* RemainingBalanceGraph.swift in Sources */,
 				BEC58C472C43FC4E0053E5E1 /* Reoccurance.swift in Sources */,
@@ -425,7 +422,6 @@
 				BEC58C3C2C42A2080053E5E1 /* TransactionView.swift in Sources */,
 				BE7730E02C3A7F730062AA02 /* AddPurchaseView.swift in Sources */,
 				BE78F5B52C45367E00CF7F61 /* AddPurchaseModel.swift in Sources */,
-				BE9546E82C1C5E5B00346C26 /* DumbyData.swift in Sources */,
 				BE7730DE2C3A74B30062AA02 /* CurrencyField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

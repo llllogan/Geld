@@ -17,9 +17,9 @@ class Transaction: Identifiable {
     var amount: Double
     var date: Date
     var location: String
-    var category: PurchaseCategory
+    var category: Category?
     
-    init(name: String, vendor: String, amount: Double, date: Date, location: String, category: PurchaseCategory) {
+    init(name: String, vendor: String, amount: Double, date: Date, location: String, category: Category) {
         
         self.name = name
         self.vendor = vendor

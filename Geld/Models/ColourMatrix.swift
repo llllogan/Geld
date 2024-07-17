@@ -6,15 +6,26 @@
 //
 
 import SwiftUICore
-import Foundation
+import SwiftData
+import UIKit
 
-struct ColourMatrix: Codable {
+@Model
+class ColourMatrix {
     
-    var topLeft: Color
-    var topMiddle: Color
-    var topRight: Color
-    var bottomLeft: Color
-    var bottomMiddle: Color
-    var bottomRight: Color
+    @Attribute(.transformable(by: ColourTransformer.self)) var topLeft: UIColor
+    @Attribute(.transformable(by: ColourTransformer.self)) var topMiddle: UIColor
+    @Attribute(.transformable(by: ColourTransformer.self)) var topRight: UIColor
+    @Attribute(.transformable(by: ColourTransformer.self)) var bottomLeft: UIColor
+    @Attribute(.transformable(by: ColourTransformer.self)) var bottomMiddle: UIColor
+    @Attribute(.transformable(by: ColourTransformer.self)) var bottomRight: UIColor
+    
+    init(topLeft: Color, topMiddle: Color, topRight: Color, bottomLeft: Color, bottomMiddle: Color, bottomRight: Color) {
+        self.topLeft = UIColor(topLeft)
+        self.topMiddle = UIColor(topMiddle)
+        self.topRight = UIColor(topRight)
+        self.bottomLeft = UIColor(bottomLeft)
+        self.bottomMiddle = UIColor(bottomMiddle)
+        self.bottomRight = UIColor(bottomRight)
+    }
     
 }

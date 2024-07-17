@@ -11,10 +11,21 @@ import SwiftData
 @main
 struct GeldApp: App {
     
-    let container: ModelContainer = {
+    init() {
+        ColourTransformer.register()
+    }
+    
+    var container: ModelContainer = {
+        ColourTransformer.register()
         let schema = Schema([Transaction.self, Account.self])
-        let container = try! ModelContainer(for: schema, configurations: [])
-        return container
+        
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Failed to create model container wamp wamp: \(error)")
+        }
     }()
     
     var body: some Scene {

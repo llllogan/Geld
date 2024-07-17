@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Account: Identifiable {
+class Account {
     
     var id: String
     var name: String
@@ -19,14 +19,14 @@ class Account: Identifiable {
     var creditLimit: Double
     var cycleLimit: Double
     var curreny: Currency
-    var color: String
-    var dynamicColor: ColourMatrix
-    var dynamicColorFlag: Bool
+    var colour: String
+    var dynamicColour: ColourMatrix
+    var dynamicColourFlag: Bool
     var hidden: Bool
     
     
     
-    init(name: String, balance: Double, cashflowType: CashflowType, holdersName: String, creditLimit: Double, cycleLimit: Double, currency: Currency, color: String, dynamicColor: ColourMatrix, dynamicColorFlag: Bool, hidden: Bool) {
+    init(name: String, balance: Double, cashflowType: CashflowType, holdersName: String, creditLimit: Double, cycleLimit: Double, currency: Currency, colour: String, dynamicColour: ColourMatrix, dynamicColourFlag: Bool, hidden: Bool) {
         
         self.name = name
         self.balance = balance
@@ -35,9 +35,9 @@ class Account: Identifiable {
         self.creditLimit = creditLimit
         self.cycleLimit = cycleLimit
         self.curreny = currency
-        self.color = color
-        self.dynamicColor = dynamicColor
-        self.dynamicColorFlag = dynamicColorFlag
+        self.colour = colour
+        self.dynamicColour = dynamicColour
+        self.dynamicColourFlag = dynamicColourFlag
         self.hidden = hidden
         
         self.id = UUID().uuidString
