@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Transaction: Identifiable {
+class Transaction {
     
     var id: String
     var name: String

@@ -11,8 +11,8 @@ import MapKit
 struct AddPurchase: View {
 
     @State private var viewModel = AddPurchaseViewModel()
-    
-    let transaction = Transaction(name: "", vendor: "", amount: 0, date: Date(), location: "", category: PurchaseCategories.last!)
+    @State var transaction: Transaction = Transaction(name: "", vendor: "", amount: 0, date: Date(), location: "", category: PurchaseCategories.last!)
+    @State var transactionAmount: String = ""
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -22,18 +22,18 @@ struct AddPurchase: View {
                         Text("Name")
                         .font(.headline)
                         Spacer()
-                        TextField("Purchase Name", text: $viewModel.name)
+                        TextField("Purchase Name", text: $transaction.name)
                             .multilineTextAlignment(.trailing)
                     }
                     HStack {
                         Text("Amount")
                         .font(.headline)
                         Spacer()
-                        TextField("Amount", text: $viewModel.amount)
+                        TextField("Amount", text: $transactionAmount)
                             .multilineTextAlignment(.trailing)
                             .keyboardType(.numberPad)
                     }
-                    Picker("Category", selection: $viewModel.selectedCategory) {
+                    Picker("Category", selection: $transaction.category) {
                         ForEach(PurchaseCategories) { category in
                             HStack {
                                 Label(category.name, systemImage: category.symbol)
@@ -42,9 +42,9 @@ struct AddPurchase: View {
                     }
                 }
                 Section (header: Text("Time")) {
-                    DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
+                    DatePicker("Date", selection: $transaction.date, displayedComponents: .date)
                         .font(.headline)
-                    DatePicker("Time", selection: $viewModel.date, displayedComponents: .hourAndMinute)
+                    DatePicker("Time", selection: $transaction.date, displayedComponents: .hourAndMinute)
                         .font(.headline)
                     List {
                         Picker("Reocurrence", selection: $viewModel.reoccurance) {
@@ -58,7 +58,7 @@ struct AddPurchase: View {
                         }
                     }
 
-                    if (viewModel.isDateInFuture()) {
+                    if (transaction.date > Date()) {
                         Label("This purchase will happen in the future", systemImage: "clock.badge.fill")
                     }
 
@@ -73,7 +73,7 @@ struct AddPurchase: View {
                 .padding(.horizontal)
                 .frame(height: 50)
 
-            Button(action: {print("Hello")} ) {
+            Button(action: {viewModel.addPurchase(transaction: transaction, amountAsString: transactionAmount)} ) {
                 ZStack {
                     Rectangle()
                         .fill(Color.blue)
