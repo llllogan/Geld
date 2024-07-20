@@ -12,7 +12,7 @@ struct AddPurchase: View {
 
     @State private var viewModel = AddPurchaseViewModel()
     
-    let transaction = Transaction(name: "", vendor: "", amount: 0, date: Date(), location: "", category: PurchaseCategory.defaultCategory)
+    let transaction = Transaction(name: "", vendor: "", amount: 0, date: Date(), location: "", category: PurchaseCategories.last!)
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -32,6 +32,13 @@ struct AddPurchase: View {
                         TextField("Amount", text: $viewModel.amount)
                             .multilineTextAlignment(.trailing)
                             .keyboardType(.numberPad)
+                    }
+                    Picker("Category", selection: $viewModel.selectedCategory) {
+                        ForEach(PurchaseCategories) { category in
+                            HStack {
+                                Label(category.name, systemImage: category.symbol)
+                            }.tag(category as Category?)
+                        }
                     }
                 }
                 Section (header: Text("Time")) {

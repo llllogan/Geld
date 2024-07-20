@@ -15,6 +15,7 @@ class AddPurchaseViewModel {
     var date = Date()
     var category = ""
     var reoccurance: Reoccurence = .none
+    var selectedCategory: Category?
     
     func isDateInFuture() -> Bool {
 

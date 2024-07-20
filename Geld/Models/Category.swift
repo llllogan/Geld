@@ -10,28 +10,27 @@ import SwiftData
 import UIKit
 
 
-struct PurchaseCategory {
+let PurchaseCategories = [
 
-    static let groceries = Category(name: "Groceries", colour: .green, symbol: "cart")
-    static let housing = Category(name: "Housing", colour: .blue, symbol: "house")
-    static let utilities = Category(name: "Utilities", colour: Color(.sRGB, red: 0.0, green: 0.5, blue: 1.0, opacity: 1.0), symbol: "bolt") // Light Blue
-    static let transportation = Category(name: "Transportation", colour: .yellow, symbol: "car")
-    static let healthcare = Category(name: "Healthcare", colour: .red, symbol: "heart")
-    static let diningOut = Category(name: "Dining Out and Takeout", colour: .orange, symbol: "fork.knife")
-    static let entertainment = Category(name: "Entertainment", colour: .purple, symbol: "play.rectangle")
-    static let clothing = Category(name: "Clothing and Apparel", colour: .pink, symbol: "tshirt")
-    static let electronics = Category(name: "Electronics", colour: Color(.sRGB, red: 0.0, green: 1.0, blue: 1.0, opacity: 1.0), symbol: "desktopcomputer") // Cyan
-    static let personalCare = Category(name: "Personal Care", colour: Color(.sRGB, red: 1.0, green: 0.0, blue: 1.0, opacity: 1.0), symbol: "scissors") // Magenta
-    static let travel = Category(name: "Travel", colour: Color(.sRGB, red: 0.53, green: 0.81, blue: 0.92, opacity: 1.0), symbol: "airplane") // Sky Blue
-    static let education = Category(name: "Education", colour: Color(.sRGB, red: 0.0, green: 0.39, blue: 0.0, opacity: 1.0), symbol: "book") // Dark Green
-    static let recreation = Category(name: "Recreation", colour: Color(.sRGB, red: 0.0, green: 0.5, blue: 0.5, opacity: 1.0), symbol: "sportscourt") // Teal
-    static let householdSupplies = Category(name: "Household Supplies", colour: .brown, symbol: "house.fill")
-    static let financialServices = Category(name: "Financial Services", colour: Color(.sRGB, red: 1.0, green: 0.84, blue: 0.0, opacity: 1.0), symbol: "dollarsign.circle") // Gold
-    static let defaultCategory = Category(name: "", colour: .gray, symbol: "questionmark.circle")
-    
+    Category(name: "Groceries", colour: .green, symbol: "cart"),
+    Category(name: "Housing", colour: .blue, symbol: "house"),
+    Category(name: "Utilities", colour: Color(.sRGB, red: 0.0, green: 0.5, blue: 1.0, opacity: 1.0), symbol: "bolt"), // Light Blue
+    Category(name: "Transportation", colour: .yellow, symbol: "car"),
+    Category(name: "Healthcare", colour: .red, symbol: "heart"),
+    Category(name: "Dining Out and Takeout", colour: .orange, symbol: "fork.knife"),
+    Category(name: "Entertainment", colour: .purple, symbol: "play.rectangle"),
+    Category(name: "Clothing and Apparel", colour: .pink, symbol: "tshirt"),
+    Category(name: "Electronics", colour: Color(.sRGB, red: 0.0, green: 1.0, blue: 1.0, opacity: 1.0), symbol: "desktopcomputer"), // Cyan
+    Category(name: "Personal Care", colour: Color(.sRGB, red: 1.0, green: 0.0, blue: 1.0, opacity: 1.0), symbol: "scissors"), // Magenta
+    Category(name: "Travel", colour: Color(.sRGB, red: 0.53, green: 0.81, blue: 0.92, opacity: 1.0), symbol: "airplane"), // Sky Blue
+    Category(name: "Education", colour: Color(.sRGB, red: 0.0, green: 0.39, blue: 0.0, opacity: 1.0), symbol: "book"), // Dark Green
+    Category(name: "Recreation", colour: Color(.sRGB, red: 0.0, green: 0.5, blue: 0.5, opacity: 1.0), symbol: "sportscourt"), // Teal
+    Category(name: "Household Supplies", colour: .brown, symbol: "house.fill"),
+    Category(name: "Financial Services", colour: Color(.sRGB, red: 1.0, green: 0.84, blue: 0.0, opacity: 1.0), symbol: "dollarsign.circle"), // Gold
+    Category(name: "", colour: .gray, symbol: "questionmark.circle")
+]
 
     
-}
 
 @Model
 class Category {
